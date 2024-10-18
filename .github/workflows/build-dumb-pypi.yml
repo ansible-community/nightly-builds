@@ -85,11 +85,11 @@ jobs:
               }}'
           } >> ${GITHUB_OUTPUT}
 
-      - name: Check out antsibull
+      - name: Check out antsibull-build
         uses: actions/checkout@v4
         with:
           ref: main
-          repository: ansible-community/antsibull
+          repository: ansible-community/antsibull-build
 
       - name: >-
           Check out ${{
@@ -116,10 +116,10 @@ jobs:
           -U --user
           pip setuptools wheel
 
-      - name: Install antsibull dist from PyPI
-        run: python -m pip install -U --user antsibull
+      - name: Install antsibull-build dist from PyPI
+        run: python -m pip install -U --user antsibull-build
 
-      - name: Install antsibull dist from GitHub
+      - name: Install antsibull-build dist from GitHub
         run: >-
           python -m
           pip install
