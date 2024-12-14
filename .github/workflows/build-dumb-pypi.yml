@@ -90,6 +90,7 @@ jobs:
         with:
           ref: main
           repository: ansible-community/antsibull-build
+          persist-credentials: false
 
       - name: >-
           Check out ${{
@@ -102,6 +103,7 @@ jobs:
           path: ansible-build-data
           ref: ${{ steps.build-settings.outputs.ansible-build-data-ref }}
           repository: ${{ steps.build-settings.outputs.ansible-build-data-slug }}
+          persist-credentials: false
 
       - name: Make 'dist/' dir
         run: |
@@ -156,6 +158,7 @@ jobs:
           path: ansible--ansible--devel
           ref: ${{ steps.build-settings.outputs.ansible-core-ref }}
           repository: ${{ steps.build-settings.outputs.ansible-core-slug }}
+          persist-credentials: false
 
       - name: >-
           Build ${{
